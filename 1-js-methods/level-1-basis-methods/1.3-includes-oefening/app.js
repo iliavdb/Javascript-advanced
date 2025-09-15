@@ -9,6 +9,7 @@ console.log('Gezochte kleur:', zoekKleur);
 
 // TODO: Check of de kleur in de array staat
 const gevonden =
-  /* jouw code hier */
+  personen.find(persoon => persoon.leeftijd > 25);
+console.log(gevonden); // {naam: 'Piet', leeftijd: 30}
 
   console.log('Kleur gevonden:', gevonden);
