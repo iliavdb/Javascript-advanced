@@ -5,17 +5,17 @@ function valideerEmail(email) {
     // TODO: Check of email geldig is
     // Regels: moet @ bevatten, geen spaties, eindigt op .com/.nl/.org
     
-    const schoonEmail = /* jouw code hier - trim en lowercase */
+    const schoonEmail = email.trim().toLowerCase();
     
     // Check @ aanwezig
-    if () return false;
+    if (!schoonEmail.includes('@')) return false;
     
     // Check geen spaties
-    if () return false;
+    if (schoonEmail.includes(' ')) return false;
     
     // Check geldig einde
     const geldigeEindes = ['.com', '.nl', '.org'];
-    return /* jouw code hier - check of email eindigt op een van deze */;
+    return geldigeEindes.some(einde => schoonEmail.endsWith(einde));
 }
 
 // Test de functie
