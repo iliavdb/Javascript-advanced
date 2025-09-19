@@ -5,16 +5,16 @@ function slaOpNaam() {
     console.log('slaOpNaam() aangeroepen');
     
     // TODO: Haal naam uit input veld
-    const naam = /* jouw code hier */
+    const naam = document.getElementById('naam-input').value.trim();
     
     // TODO: Check of naam niet leeg is
-    if (/* jouw code hier */) {
+    if (naam === '') {
         alert('Voer eerst een naam in!');
         return;
     }
     
     // TODO: Sla naam op in localStorage
-    /* jouw code hier */;
+    localStorage.setItem('naam', naam);
     
     // TODO: Toon welkomstbericht
     toonWelkom();
@@ -25,13 +25,13 @@ function slaOpNaam() {
 
 function toonWelkom() {
     // TODO: Haal naam op uit localStorage
-    const opgeslagenNaam = /* jouw code hier */
+    const opgeslagenNaam = localStorage.getItem('naam');
     
     const welkomElement = document.getElementById('welkom-bericht');
     
     // TODO: Toon juiste bericht
-    if (/* jouw code hier */) {
-        welkomElement.textContent = /* jouw code hier */
+    if (opgeslagenNaam) {
+        welkomElement.textContent = `Welkom terug, ${opgeslagenNaam}!`;
     } else {
         welkomElement.textContent = 'Geen naam opgeslagen.';
     }
@@ -39,10 +39,10 @@ function toonWelkom() {
 
 function wisNaam() {
     // TODO: Verwijder naam uit localStorage
-    /* jouw code hier */;
+    localStorage.removeItem('naam');
     
     toonWelkom();
 }
 
 // TODO: Roep toonWelkom() aan bij pagina laden
-/* jouw code hier */;
+window.addEventListener('load', toonWelkom);

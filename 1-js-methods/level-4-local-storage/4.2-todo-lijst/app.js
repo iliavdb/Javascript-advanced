@@ -5,7 +5,7 @@ let taken = []; // Array van strings (geen objecten!)
 
 function voegTaakToe() {
     const input = document.getElementById('nieuwe-taak');
-    const taakTekst = /* jouw code hier - haal waarde op en trim */;
+    const taakTekst = input.value.trim(); // haal waarde op en trim
     
     if (taakTekst === '') {
         alert('Voer een taak in!');
@@ -13,10 +13,10 @@ function voegTaakToe() {
     }
     
     // TODO: Voeg taak toe aan array (gewoon de string)
-    taken.push(/* jouw code hier */);
+    taken.push(taakTekst);
     
     // TODO: Sla taken op in localStorage
-    /* jouw code hier - gebruik JSON.stringify */;
+    localStorage.setItem('taken', JSON.stringify(taken));
     
     // Maak input leeg en update UI
     input.value = '';
@@ -25,11 +25,11 @@ function voegTaakToe() {
 
 function laadTaken() {
     // TODO: Haal taken op uit localStorage
-    const opgeslagenTaken = /* jouw code hier */;
+    const opgeslagenTaken = localStorage.getItem('taken');
     
     if (opgeslagenTaken) {
         // TODO: Parse JSON naar array
-        taken = /* jouw code hier */;
+        taken = JSON.parse(opgeslagenTaken);
     }
 }
 
@@ -44,7 +44,7 @@ function toonTaken() {
     // TODO: Genereer HTML voor alle taken
     const takenHTML = taken.map((taak, index) => `
         <div class="taak">
-            ${/* jouw code hier - taak tekst */}
+            ${taak}
             <button onclick="verwijderTaak(${index})">🗑️</button>
         </div>
     `).join('');
@@ -52,29 +52,32 @@ function toonTaken() {
     container.innerHTML = takenHTML;
     
     // TODO: Update teller
-    document.getElementById('aantal-taken').textContent = /* jouw code hier */;
+    document.getElementById('aantal-taken').textContent = taken.length;
 }
 
 function verwijderTaak(index) {
     // TODO: Verwijder taak op specifieke index
-    taken.splice(/* jouw code hier */);
+    taken.splice(index, 1);
     
     // TODO: Sla taken op en update UI
-    /* jouw code hier */;
+    localStorage.setItem('taken', JSON.stringify(taken));
     toonTaken();
 }
 
 function wisAlleTaken() {
     if (confirm('Weet je zeker dat je alle taken wilt wissen?')) {
         // TODO: Maak array leeg
-        taken = /* jouw code hier */;
+        taken = [];
         
         // TODO: Verwijder uit localStorage
-        /* jouw code hier - gebruik removeItem */;
+        localStorage.removeItem('taken');
         
         toonTaken();
     }
 }
 
 // TODO: Initialisatie bij pagina laden
-/* jouw code hier - gebruik addEventListener */;
+window.addEventListener('load', () => {
+    laadTaken();
+    toonTaken();
+});
