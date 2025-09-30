@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Cristiano Ronaldo", "age": 29, "image": "https://i.pravatar.cc/150?img=1" },
+  { "id": 2, "name": "Anita Dik", "age": 32, "image": "https://i.pravatar.cc/150?img=2" },
+  { "id": 3, "name": "Ben Dover", "age": 36, "image": "https://i.pravatar.cc/150?img=3" },
+  { "id": 4, "name": "Bruce lee", "age": 34, "image": "https://i.pravatar.cc/150?img=4" },
+  { "id": 5, "name": "Ma Pang Pang", "age": 29, "image": "https://i.pravatar.cc/150?img=5" },
+  { "id": 6, "name": "Kuntu ma Kuntu", "age": 27, "image": "https://i.pravatar.cc/150?img=6" }
+]
