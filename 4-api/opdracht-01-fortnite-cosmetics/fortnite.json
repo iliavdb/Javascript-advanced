@@ -1,8 +1,0 @@
-[
-  {"id":"CID_001","name":"Violet Vanguard","type":"Outfit","rarity":"epic","images":{"icon":"https://i.pravatar.cc/300?img=12"}},
-  {"id":"CID_002","name":"Neon Rider","type":"Outfit","rarity":"legendary","images":{"icon":"https://i.pravatar.cc/300?img=23"}},
-  {"id":"CID_003","name":"Shadow Blade","type":"Pickaxe","rarity":"rare","images":{"icon":"https://i.pravatar.cc/300?img=32"}},
-  {"id":"CID_004","name":"Aero Wings","type":"Back Bling","rarity":"epic","images":{"icon":"https://i.pravatar.cc/300?img=44"}},
-  {"id":"CID_005","name":"Pulse Emote","type":"Emote","rarity":"uncommon","images":{"icon":"https://i.pravatar.cc/300?img=55"}},
-  {"id":"CID_006","name":"Gold Glider","type":"Glider","rarity":"legendary","images":{"icon":"https://i.pravatar.cc/300?img=66"}}
-]
