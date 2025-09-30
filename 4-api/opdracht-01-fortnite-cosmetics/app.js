@@ -6,15 +6,11 @@ const apiKeyInput = document.getElementById('api-key');
 const errorBox = document.getElementById('error');
 const subtitle = document.getElementById('subtitle');
 
-// Endpoint van jou (de link die je gaf)
 const API_URL = 'https://fortnite-api.com/v2/cosmetics/new';
 
-// fallback sample file (optioneel)
 const SAMPLE_JSON = 'fortnite.json';
 
-// helper: maak card
 function makeCard(item){
-  // sommige endpoints nesten image links op verschillende plekken — probeer veilige paden
   const image = item.images && (item.images.icon || item.images.featured || item.images.smallIcon) || item.image || item.icon || '';
   const name = item.name || item.displayName || item.type || 'Unknown';
   const rarity = (item.rarity && item.rarity.value) || (item.rarity) || 'common';
@@ -55,12 +51,10 @@ async function loadFromAPI(key){
 
     const res = await fetch(API_URL, { headers });
     if (!res.ok){
-      // vaak 401 of 403 als key ontbreekt of CORS probleem
       throw new Error(`API returned ${res.status} ${res.statusText}`);
     }
     const json = await res.json();
 
-    // v2 responses: data zit meestal in json.data of json.data.items
     let items = [];
     if (json.data && Array.isArray(json.data)) items = json.data;
     else if (json.data && Array.isArray(json.data.items)) items = json.data.items;
@@ -69,7 +63,6 @@ async function loadFromAPI(key){
     else if (Array.isArray(json)) items = json;
     else if (json.data && json.data.length) items = json.data;
     else {
-      // soms object met 'items' map
       const maybeItems = json.data && (json.data.items || json.data.objects || json.data.results);
       if (maybeItems && Array.isArray(maybeItems)) items = maybeItems;
     }
@@ -89,7 +82,6 @@ async function loadFromAPI(key){
   }
 }
 
-// laad sample data (fallback)
 async function loadSample(){
   clearError();
   subtitle.textContent = 'Laden van sample data';
@@ -104,12 +96,10 @@ async function loadSample(){
   }
 }
 
-// events
 loadBtn.addEventListener('click', () => {
   const key = apiKeyInput.value;
   loadFromAPI(key);
 });
 resetBtn.addEventListener('click', () => loadSample());
 
-// auto load sample on first run (so page niet leeg is)
 loadSample();

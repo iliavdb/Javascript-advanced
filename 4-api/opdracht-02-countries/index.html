@@ -1,14 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opdracht 2 - Countries</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Countries Explorer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header class="topbar">
+    <h1>Countries Explorer</h1>
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Zoek land (naam, hoofdstad, cca2...)" />
+      <select id="regionSelect">
+        <option value="">Alle regio's</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+        <option value="Antarctic">Antarctic</option>
+      </select>
+      <select id="sortSelect">
+        <option value="name-asc">Naam ↑</option>
+        <option value="name-desc">Naam ↓</option>
+        <option value="pop-asc">Bevolking ↑</option>
+        <option value="pop-desc">Bevolking ↓</option>
+        <option value="area-asc">Oppervlakte ↑</option>
+        <option value="area-desc">Oppervlakte ↓</option>
+      </select>
+      <button id="refreshBtn" title="Haal data opnieuw op (API)">Ververs</button>
+    </div>
+  </header>
 
+  <main>
+    <section id="status" class="status">Laden...</section>
+    <section id="cardsContainer" class="cards"></section>
+    <template id="cardTemplate">
+      <article class="card">
+        <img class="flag" alt="Vlag" />
+        <div class="card-body">
+          <h2 class="country-name"></h2>
+          <p class="info"><strong>Regio:</strong> <span class="region"></span></p>
+          <p class="info"><strong>Hoofdstad:</strong> <span class="capital"></span></p>
+          <p class="info"><strong>Bevolking:</strong> <span class="population"></span></p>
+          <p class="info"><strong>Oppervlakte:</strong> <span class="area"></span> km²</p>
+          <p class="info"><strong>Valuta:</strong> <span class="currencies"></span></p>
+          <div class="btn-row">
+            <a class="more-btn" target="_blank" rel="noopener">Meer (Wikipedia search)</a>
+          </div>
+        </div>
+      </article>
+    </template>
+  </main>
+
+  <footer class="footer">
+    Data via <a href="https://restcountries.com/v3.1/all" target="_blank" rel="noopener">restcountries.com</a>
+  </footer>
+
+  <script src="app.js" type="module"></script>
 </body>
-
 </html>

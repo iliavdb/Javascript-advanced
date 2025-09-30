@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Netherlands",
+    "official": "Kingdom of the Netherlands",
+    "cca2": "NL",
+    "cca3": "NLD",
+    "capital": "Amsterdam",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 17134872,
+    "area": 41850,
+    "flags": {
+      "png": "https://flagcdn.com/w320/nl.png",
+      "svg": "https://flagcdn.com/nl.svg"
+    },
+    "currencies": {
+      "EUR": { "name": "Euro", "symbol": "€" }
+    },
+    "languages": { "nld": "Dutch" },
+    "latlng": [52.5, 5.75]
+  },
+  {
+    "name": "Brazil",
+    "official": "Federative Republic of Brazil",
+    "cca2": "BR",
+    "cca3": "BRA",
+    "capital": "Brasília",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 212559417,
+    "area": 8515767,
+    "flags": {
+      "png": "https://flagcdn.com/w320/br.png",
+      "svg": "https://flagcdn.com/br.svg"
+    },
+    "currencies": {
+      "BRL": { "name": "Brazilian real", "symbol": "R$" }
+    },
+    "languages": { "por": "Portuguese" },
+    "latlng": [-10.0, -55.0]
+  },
+  {
+    "name": "Japan",
+    "official": "Japan",
+    "cca2": "JP",
+    "cca3": "JPN",
+    "capital": "Tokyo",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 125960000,
+    "area": 377930,
+    "flags": {
+      "png": "https://flagcdn.com/w320/jp.png",
+      "svg": "https://flagcdn.com/jp.svg"
+    },
+    "currencies": {
+      "JPY": { "name": "Japanese yen", "symbol": "¥" }
+    },
+    "languages": { "jpn": "Japanese" },
+    "latlng": [36.0, 138.0]
+  }
+]
